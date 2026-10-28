@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CineTix — Pesan Tiket Bioskop</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="#"><span class="brand-mark">C</span> Cine<span>Tix</span></a>
+    <nav>
+      <a href="#film">Film</a>
+      <a href="#cara-pesan">Cara Pesan</a>
+    </nav>
+    <a class="my-ticket" href="#film">Jelajahi Film <span>↗</span></a>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="hero-copy">
+        <p class="eyebrow">CINETIX / BIOSKOP</p>
+        <h1>Mau nonton<br><span>film apa hari ini?</span></h1>
+        <p class="hero-desc">Cek film yang sedang tayang, bandingkan harga, dan pilih jadwal yang pas.</p>
+        <a class="primary-btn" href="#film">Lihat daftar film <span>↓</span></a>
+        <div class="hero-meta"><span>6 film tersedia</span><span>•</span><span>Harga mulai Rp30.000</span></div>
+      </div>
+      <div class="hero-art" aria-label="Ringkasan pilihan film">
+        <div class="ticket-art">
+          <div class="ticket-top"><span>SEDANG TAYANG</span><span>01 / 06</span></div>
+          <div class="ticket-symbol">▶</div>
+          <div class="ticket-lines"><i></i><i></i><i></i></div>
+          <div class="ticket-bottom"><span>GALAKSI BARU<br>FIKSI ILMIAH · AKSI</span><strong>8.9 ★</strong></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="film-section" id="film">
+      <div class="section-heading">
+        <div><p class="eyebrow">DAFTAR FILM</p><h2>Film yang tersedia</h2><p class="muted">Cari judul atau urutkan film berdasarkan harga, rating, dan nama.</p></div>
+        <div class="film-count"><strong id="filmCount">6</strong><span>FILM TERSEDIA</span></div>
+      </div>
+
+      <div class="toolbar">
+        <label class="search-box"><span>⌕</span><input id="searchInput" type="search" placeholder="Cari judul film..." autocomplete="off"><button id="clearSearch" aria-label="Hapus pencarian" title="Hapus pencarian">×</button></label>
+        <label class="sort-control"><span>Urutkan:</span><select id="sortSelect"><option value="default">Pilihan CineTix</option><option value="price-asc">Harga: termurah</option><option value="price-desc">Harga: termahal</option><option value="rating-desc">Rating: tertinggi</option><option value="title-asc">Judul: A–Z</option></select></label>
+      </div>
+
+      <div class="content-grid">
+        <div>
+          <div id="movieGrid" class="movie-grid"></div>
+          <div id="emptyState" class="empty-state hidden"><div>⌕</div><h3>Film belum ditemukan</h3><p>Coba kata kunci lain atau hapus pencarianmu.</p></div>
+        </div>
+        <aside class="log-panel">
+          <div class="log-header"><div><p class="eyebrow">DEMO STRUKTUR DATA</p><h3>Log proses</h3></div><span class="status-pill"><i></i> LIVE</span></div>
+          <p class="log-intro">Lihat langkah pencarian dan pengurutan yang dijalankan pada daftar film.</p>
+          <div class="log-tabs"><button class="log-tab active" data-log="all">Semua</button><button class="log-tab" data-log="search">Searching</button><button class="log-tab" data-log="sort">Sorting</button></div>
+          <div id="logList" class="log-list" aria-live="polite"></div>
+          <button id="clearLogs" class="clear-logs">Bersihkan log</button>
+        </aside>
+      </div>
+    </section>
+
+    <section class="how-section" id="cara-pesan">
+      <p class="eyebrow">CARA MENGGUNAKAN</p><h2>Cara mencoba CineTix</h2>
+      <div class="steps">
+        <article><span>01</span><div class="step-icon">⌕</div><h3>Temukan film</h3><p>Ketik judul film di kolom pencarian atau gunakan menu urutkan.</p></article>
+        <article><span>02</span><div class="step-icon">▣</div><h3>Pilih jadwal</h3><p>Klik tombol lihat jadwal untuk memilih bioskop, jam, dan jumlah tiket.</p></article>
+        <article><span>03</span><div class="step-icon">✦</div><h3>Siap menonton</h3><p>Periksa total biaya. Pemesanan ini hanya simulasi, bukan transaksi sungguhan.</p></article>
+      </div>
+    </section>
+  </main>
+
+  <footer><a class="brand" href="#"><span class="brand-mark">C</span> Cine<span>Tix</span></a><p>Project pembelajaran algoritma • Katalog film untuk tugas praktikum</p></footer>
+
+  <dialog id="bookingDialog" class="booking-dialog">
+    <form method="dialog" class="dialog-close-row"><button class="icon-close" aria-label="Tutup">×</button></form>
+    <div id="bookingContent"></div>
+  </dialog>
+  <script src="script.js"></script>
+</body>
+</html>
